@@ -1,0 +1,8 @@
+Binary search tree:
+    by nature they are in order
+    looks like an upside down family tree
+    the bubbles are nodes that reference below
+        sort of like linked list
+        each node has a pointer and value
+    new nodes start at the top
+        then compares with the values

@@ -1,0 +1,25 @@
+java is super picky
+make sure to put everything correctly
+
+string st = “hi there”
+for (int i = 0; i<st.length(); i++){
+	System.out.println(st.charAt(i));
+
+// st.charAt(i) stands for st[i]
+// st.length stands for len(st)
+
+string[] st2 = {“abc”, “def”, “ghi”};
+for (int i = 0; i<st2.length; i++){
+	System.out.println(st2[i]);
+}
+
+// use st2[i] only for list, wait no what
+
+for (String each : st2){
+	System.out.println(each);
+}
+
+// same as:
+//	for item in list:
+//		print(item)
+

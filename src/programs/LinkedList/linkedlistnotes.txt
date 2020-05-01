@@ -1,0 +1,167 @@
+array
+    data is fixed size
+    index
+    knows how big
+    length
+    can't change size
+linked list
+    IS GOING TO BE A CLASS
+    don't have indexes
+    size can vary
+array list
+    size()
+stack
+queue
+tree
+hash maps
+graphs
+
+
+declaring array
+    int [] num = new int[10];
+
+linkedList LL = new linkedList();
+node is a value in a linked list:
+    - can have two links, for next project we are only using one link
+    - has a pointer, referencing
+    - consists of two parts, a value and a reference to a next node
+calling a linked list is calling a reference to a node
+
+functions of our linked list that our main class are going to access are:   outside circle
+    - //constructor// linkedList(), void add(int), void delete(int),
+    boolean find(int), void sort(), void display(), shuffle(), etc.
+data structures/types of our linked list are:       inside circle
+    - node reference head
+
+functions of node:      outside circle
+    - int getValue(), // constructor // Node(int), display(), NodegetNext() // returns a node //, setNext(Node)
+data types of node:     inside circle
+    - int value
+    - Node next
+
+
+Node function:
+    - inside circle
+        - int value Node next
+    - outside circle
+        - Node(int)
+        - display()
+------------------------------------------------------------------------------------------------------------------------
+creating node class:
+public class Node{
+    private int value;
+    private Node next;  // recursively defined object   // recursion
+    public Node(int x){
+        value = x;
+        next = null;
+    }
+
+    public void display(){
+    System.out.print(value);
+    }
+
+    public Node getNext(){
+        return next;
+    }
+
+    public void setNext(Node n){
+        next = n;
+    }
+
+    public static int getValue(Node n){
+        return value;
+    }
+}
+
+public static void main(String[]arg){
+    Node n = new Node(6);
+    n.display();
+}
+------------------------------------------------------------------------------------------------------------------------
+
+creating linkedList:
+    - inside:
+        - Node head
+    - outside:
+        - void display()
+        - void add(int)
+        - boolean find(int)
+        - void delete(int)
+        - int size()
+
+public class LinkedList{
+    private Node head;
+
+    public LinkedList(){
+    head = null;
+    }
+
+    public void display(){
+        Node temp = head;
+        while (temp != null){
+            temp.display();
+            temp = temp.getNext;
+        }
+    }
+
+    public void addToFront(int x){
+        Node temp = new Node(x);
+        temp.setNext(head);
+        head = temp;
+
+    }
+}
+
+public static void main(){
+    LinkedList L1 = new LinkedList();
+    L1.display();   // display example = 6 12 20 30 34
+    // adding to front now
+    L1.addToFront(3);
+    L1.addToFront(7);   // build node, point
+    L1.addToFront(10);
+}
+------------------------------------------------------------------------------------------------------------------------
+import java.util.LinkedList;
+// linkedList will be a class
+public class linkedList_practice {
+    public static void main(String[]arg){
+        LinkedList myList;
+        myList = new LinkedList();
+        myList.add(3);
+        myList.add(20);
+        myList.add(9);
+        myList.delete(6); // check to see if exists, then remove if it does, to avoid error
+        myList.display();
+        myList.find(6); // boolean function
+        myList.sort();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------
+3/10/20
+
+1) add to EmptyList
+2) add to front of existing list
+3) add to the middle of the list
+4) add to the end
+
+public class linkedListPractice {
+    public static void main(String[]arg){
+        LinkedList myList = new Linked List();
+        myList.add(13);
+        myList.add(6);
+        myList.add(10);
+        myList.display();
+
+    }
+
+    public void add(string x){
+        Node temp = new Node(x);
+        if (head == null){          // case 1
+            head = temp;
+        }
+        else if (temp.getValue()) <= head.getValue()){
+            temp.setNext(head);
+            head = temp;
+        }
+    }
+}

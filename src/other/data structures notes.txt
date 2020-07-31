@@ -1,0 +1,22 @@
+comparing different algorithms:
+    bubble sort
+    quick sort
+    merge sort
+    heap sort
+    bogo sort
+    insertion sort
+    comb sort
+    shaker sort
+    selection sort
+    BST
+
+
+    bubble sort:
+        goes down in a line
+        if the number next is higher than the one before, we swap them
+        keeps moving numbers to the very end and will have to do it as many times as needed
+        growth rate is Big O(n * n)
+
+    quick sort:
+        growth rate O(n * log(n))
+        

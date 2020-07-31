@@ -40,7 +40,7 @@ class Node{
 
 class BST{
     private Node root;
-    BST(); // constructor, possibly with size counter
+    BST(); // constructor
     void add(int); // function
     boolean find(int); // function
     int min();  // function
@@ -63,21 +63,64 @@ public if main needs to access as well
 BST myTree = new BST();
 x = myTree.size();
 
-void size(){
-    first case = check if root is pointing to null ( which would make size 0)
-    second case = after if root is not pointing to null
 
-}
 
-class BST{
+class Tree{
     public int size(){      // this function will tell us the size of the entire tree, no parameters
+        if (root == null)   // technically this function is not recusive because it called the private function twice
+            return 0;
+        else
+            return 1 + size(root.leftchild) + size(root.rightchild);  // this function will tell us the size of each subtree, with parameter for nodes
+    }
+
+    private int size(Node parent){  // size of the subtree
+        if (p == null)  // this function is actually recursive
+            return 0;
+        else
+            return 1 + size(parent.leftchild) + size(parent.rightchild);
+    }
+
+    public int sum(){   // sum of tree, this will be used to calculate average alongside size
         if (root == null)
             return 0;
         else
-            return 1 + size(leftchild) + size(rightchild);  // this function will tell us the size of each subtree, with parameter for nodes
+            return root.getValue() + sum(root.leftchild) + sum(root.rightchild);
     }
 
-    private int size(Node parent){
+    private int sum(Node parent){   // sum of subtrees
+        if (parent == null)
+            return 0;
+        else
+            return parent.getValue() + sum(parent.leftchild) + sum(parent.rightchild);
+    }
 
+    public void display(){ // in-order: left child, parent, right child
+        if (root == null)
+            System.out.println("Tree is empty");
+        else
+            display(root);
+    }
+
+    private void display(Node parent){
+        if (root = null)
+            return;
+        else
+            display(parent.leftchild);
+            System.out.println(parent.getValue());
+            display(parent.rightchild);
+    }
+
+    public int height(){
+        if (root == null)
+            return 0;
+        else
+            return 1 + max(height(root.leftchild), height(root.rightchild));
+    }
+
+    private int height(Node parent){
+        if (p == null)
+            return;
+        else
+            
     }
 }

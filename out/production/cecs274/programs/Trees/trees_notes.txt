@@ -5,4 +5,122 @@ Binary search tree:
         sort of like linked list
         each node has a pointer and value
     new nodes start at the top
-        then compares with the values
+        each node has a left and a right
+            compares with root, left is lower right is higher
+                then compares with the values already inside
+                check bst.png in desktop
+                biggest node usually at the bottom
+    balanced tree:
+        use this to calculate total number of elements in a balanced list
+                2^height - 1
+        def - a tree whose subtree differ in height at most 1
+
+
+
+questions:
+    bst contains 333,000,000
+    how many levels?
+    how many array elements?
+    2^29 = 500,000,000
+
+
+class Node{
+    private int value;
+    private Node lc;
+    private Node rc;
+    Node (int x); // constructor
+    int getValue(); // function
+    void setValue(int); // function
+    void display(); // function
+    Node getLC; // function
+    Node getRC; // function
+    void setRC(Node x); // function
+    void setLC(Node x); // function
+}
+
+class BST{
+    private Node root;
+    BST(); // constructor
+    void add(int); // function
+    boolean find(int); // function
+    int min();  // function
+    int height();   // height counter, not element
+    int size(); // size counter
+    int sum();  // adds all function
+    void display(); // displays whole tree function
+}
+
+private if only using within class
+public if main needs to access as well
+    ex would be display the whole tree would be public
+    and display specific node would be private
+    private display would be accessed within public
+
+    same with the add function, public and private
+        private function constructor as node and int as parameters
+
+
+BST myTree = new BST();
+x = myTree.size();
+
+
+
+class Tree{
+    public int size(){      // this function will tell us the size of the entire tree, no parameters
+        if (root == null)   // technically this function is not recusive because it called the private function twice
+            return 0;
+        else
+            return 1 + size(root.leftchild) + size(root.rightchild);  // this function will tell us the size of each subtree, with parameter for nodes
+    }
+
+    private int size(Node parent){  // size of the subtree
+        if (p == null)  // this function is actually recursive
+            return 0;
+        else
+            return 1 + size(parent.leftchild) + size(parent.rightchild);
+    }
+
+    public int sum(){   // sum of tree, this will be used to calculate average alongside size
+        if (root == null)
+            return 0;
+        else
+            return root.getValue() + sum(root.leftchild) + sum(root.rightchild);
+    }
+
+    private int sum(Node parent){   // sum of subtrees
+        if (parent == null)
+            return 0;
+        else
+            return parent.getValue() + sum(parent.leftchild) + sum(parent.rightchild);
+    }
+
+    public void display(){ // in-order: left child, parent, right child
+        if (root == null)
+            System.out.println("Tree is empty");
+        else
+            display(root);
+    }
+
+    private void display(Node parent){
+        if (root = null)
+            return;
+        else
+            display(parent.leftchild);
+            System.out.println(parent.getValue());
+            display(parent.rightchild);
+    }
+
+    public int height(){
+        if (root == null)
+            return 0;
+        else
+            return 1 + max(height(root.leftchild), height(root.rightchild));
+    }
+
+    private int height(Node parent){
+        if (p == null)
+            return;
+        else
+            
+    }
+}
